@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="main">
+  <div class="left_block">
+    <div class="nameLB">Конструктор визиток</div>
+    <div class="input_plc">
+      <div>Наименование организации</div>
+      <div><input type="text" class="left_inp" id="name_inp"></div>
+    </div>
+    <div class="input_plc">
+      <div>ФИО</div>
+      <div><input type="text" class="left_inp" id="fio_inp"></div>
+      <div class="align">
+      <form class="form1">
+        <label class="radio-inline">
+          <input type="radio" name="optradio" id="opt1" checked>
+          <img src="img/free-icon-left-align-8550714.png" alt="">
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" id="opt2">
+          <img src="img/free-icon-center-alignment-4740971.png" alt="">
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" id="opt3">
+          <img src="img/free-icon-right-text-alignment-57086.png" alt="">
+        </label>
+      </form>
+    </div>
+    <div class="size">
+      <form>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" id="size_opt_1" checked>
+          <img src="img/24px.png" alt="">
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" id="size_opt_2">
+          <img src="img/26px.png" alt="">
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio"  id="size_opt_3">
+          <img src="img/28px.png" alt="">
+        </label>
+      </form>
+    </div>
+    <div class="color">
+      <form class="form_color">
+        <label class="radio-inline2">
+          <input type="radio" name="optradio" id="color1" checked>
+        </label>
+        <label class="radio-inline2">
+          <input type="radio" name="optradio" id="color2">
+        </label>
+        <label class="radio-inline2">
+          <input type="radio" name="optradio" id="color3">
+        </label>
+        <label class="radio-inline2">
+          <input type="radio" name="optradio" id="color4">
+        </label>
+        <label class="radio-inline2">
+          <input type="radio" name="optradio" id="color5">
+        </label>
+        <label class="radio-inline2">
+          <input type="radio" name="optradio" id="color6">
+        </label>
+      </form>
+    </div>
+    </div>
+    <div class="input_plc">
+      <div>Должность</div>
+      <div><input type="text" class="left_inp" id="dolj_inp"></div>
+      <div class="align">
+        <form class="form1">
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id=opt1_1 checked>
+            <img src="img/free-icon-left-align-8550714.png" alt="">
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id=opt2_2>
+            <img src="img/free-icon-center-alignment-4740971.png" alt="">
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id=opt3_3>
+            <img src="img/free-icon-right-text-alignment-57086.png" alt="">
+          </label>
+        </form>
+      </div>
+      <div class="size">
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id="size_opt_1_1" checked>
+            <img src="img/24px.png" alt="">
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id="size_opt_2_2">
+            <img src="img/26px.png" alt="">
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="optradio" id="size_opt_3_3">
+            <img src="img/28px.png" alt="">
+          </label>
+        </form>
+      </div>
+      <div class="color">
+        <form class="form_color">
+          <label class="radio-inline2_2">
+            <input type="radio" name="optradio" id="color1_1" checked>
+          </label>
+          <label class="radio-inline2_2">
+            <input type="radio" name="optradio" id="color2_2">
+          </label>
+          <label class="radio-inline2_2">
+            <input type="radio" name="optradio" id="color3_3">
+          </label>
+          <label class="radio-inline2_2">
+            <input type="radio" name="optradio" id="color4_4">
+          </label>
+          <label class="radio-inline2_2">
+            <input type="radio" name="optradio" id="color5_5">
+          </label>
+          <label class="radio-inline2_2">
+            <input type="radio" name="optradio" id="color6_6">
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="input_plc2">
+      <div>Телефон</div>
+      <div><input type="text" class="left_inp" id="tel_inp"></div>
+      <div class="plus_con"><input type="button" class="plus" id="plus" value="+" onclick="addTel()"><div class="plus_txt">Добавить ещё один телефон</div></div>
+    </div>
+    <div class="input_plc">
+      <div><input type="text" class="left_inp2" id="tel_inp2"></div>
+    </div>
+    <div class="input_plc">
+      <div>E-mail</div>
+      <div><input type="text" class="left_inp" id="email_inp"></div>
+      <div class="inviz">
+        <form class="form3">
+          <label class="radio-inline">
+            <input type="checkbox" name="optradio" id=email_check checked><div class="email_txt">Отображать</div>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="input_plc">
+      <div>Адрес</div>
+      <div><input type="text" class="left_inp" id="adress_inp"></div>
+      <div class="inviz">
+        <form class="form3">
+          <label class="radio-inline">
+            <input type="checkbox" name="optradio" id=adress_check checked><div class="email_txt">Отображать</div>
+          </label>
+        </form>
+      </div>
+    </div>
+    <div class="btn_con"><input type="button" class="btn" onclick="addText()" value="Применить"></div>
+  </div>
+    <div class="right_block">
+      <div class="name" id="name"></div>
+      <div class="fio" id="fio">Фёдоров Иван Семенович</div>
+      <div class="dolj" id="dolj">Менеджер по развитию</div>
+      <div class="mini">
+      <div class="tel" id="tel">8 (999) 123-45-67</div>
+      <div class="tel2" id="tel2">8 (999) 123-45-67</div>
+      <div class="email" id="email">fedorov.is@orientir.org</div>
+      <div class="adress" id="adress">Иркутск, Байкальская, 421, оф. 12</div>
+    </div>
+    </div>
+  </div>
+</body>
+<script src="3.1.js"></script>
+</html>
