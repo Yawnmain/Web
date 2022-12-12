@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Список задач</title>
+</head>
+<body>
+    <div class="container">
+    <div class="main">
+        <div class="head_cont">
+        <div class="name_list"> Список задач</div>
+        <input type="button" class="btn add_but" value="+" onclick="win1()">
+        <div class="add_word">Добавить</div>
+    </div>
+    <div class="task_con" id="1">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img" class="zip">
+        <p id="p1">Задача 1</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red()">
+            <img src="img/trashbin.svg" alt="" onclick="rem()">
+        </div>
+    </div>
+    <div class="task_con" id="2">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img2" class="zip">
+        <p id="p2">Задача 2</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red2()">
+            <img src="img/trashbin.svg" alt="" onclick="rem2()">
+        </div>
+    </div>
+    <div class="task_con" id="3">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img3" class="zip">
+        <p id="p3">Задача 3</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red3()">
+            <img src="img/trashbin.svg" alt="" onclick="rem3()">
+        </div>
+    </div>
+    <div class="task_con" id="4">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img4" class="zip">
+        <p id="p4">Задача 4</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red4()">
+            <img src="img/trashbin.svg" alt="" onclick="rem4()">
+        </div>
+    </div>
+    <div class="task_con" id="5">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img5" class="zip">
+        <p id="p5">Задача 5</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red5()">
+            <img src="img/trashbin.svg" alt="" onclick="rem5()">
+        </div>
+    </div>
+    <div class="task_con" id="6">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img6" class="zip">
+        <p id="p6">Задача 6</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red6()">
+            <img src="img/trashbin.svg" alt="" onclick="rem6()">
+        </div>
+    </div>
+    <div class="task_con" id="7">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img7" class="zip">
+        <p id="p7">Задача 7</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red7()">
+            <img src="img/trashbin.svg" alt="" onclick="rem7()">
+        </div>
+    </div>
+    <div class="task_con" id="8">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img8" class="zip">
+        <p id="p8">Задача 8</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red8()">
+            <img src="img/trashbin.svg" alt="" onclick="rem8()">
+        </div>
+    </div>
+    <div class="task_con" id="9">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img9" class="zip">
+        <p id="p9">Задача 9</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red9()">
+            <img src="img/trashbin.svg" alt="" onclick="rem9()">
+        </div>
+    </div>
+    <div class="task_con" id="10">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img10" class="zip">
+        <p id="p10">Задача 10</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red10()">
+            <img src="img/trashbin.svg" alt="" onclick="rem10()">
+        </div>
+    </div>
+    <div class="task_con" id="11">
+        <input type="checkbox" class="checkboxtask">
+        <img src="img/hiprio.svg" alt="" id="hi_img11" class="zip">
+        <p id="p11">Задача 11</p>
+        <div class="buttons">
+            <img src="img/pencil.svg" alt="" onclick="red11()">
+            <img src="img/trashbin.svg" alt="" onclick="rem11()">
+        </div>
+    </div>
+    </div>
+    <div class="task_win" id="win">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con">
+            <input type="button" class="btn sub" onclick="addText()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel()" value="Отменить">
+        </div>
+    </div>
+    <div class="task_win" id="win2">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text2">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high2">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText2()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel2()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win3">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text3">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high3">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText3()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel3()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win4">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text4">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high4">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText4()" value="Сохранить"> 
+            <input type="button" class="btn cancel" onclick="cancel4()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win5">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text5">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high5">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText5()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel5()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win6">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text6">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high6">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText6()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel6()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win7">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text7">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high7">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText7()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel7()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win8">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text8">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high8">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText8()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel8()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win9">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text9">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high9">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText9()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel9()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win10">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text10">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high10">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText10()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel10()" value="Отменить"></div>
+    </div>
+    <div class="task_win" id="win11">
+        <div class="task_win_name"> Карточка задачи</div>
+        <div class="task">Задача</div>
+        <input class="task_text" type="text" id="task_text11">
+        <div class="high_prior_cont">
+            <input type="checkbox" class="checkboxtask" id="high11">
+            <div class="high_prior_text">Высокий приоритет</div>
+            <div class="light"><img src="img/hiprio.svg" alt=""></div>
+        </div>
+        <div class="btn_con"><input type="button" class="btn sub" onclick="addText11()" value="Сохранить">
+            <input type="button" class="btn cancel" onclick="cancel11()" value="Отменить"></div>
+    </div>
+</div>
+</body>
+<script src="script.js"></script>
+<script src="edit.js"></script>
+</html>
