@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+.puzle-item{
+    background-repeat: no-repeat;
+}
+.puzle-game{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+.left-pane{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.right-pane{
+    background-color: rgb(59, 60, 97);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.right-pane h1{
+    font-weight: 300;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.puzle-source{
+    position: relative;
+    z-index: 10;
+}
+.puzle-source .puzle-item{
+    display: inline-block;
+}
+.puzle-result{
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(9, 50px);
+}
+.puzle-result .puzle-cell{
+    border: 1px solid gray;
+}
