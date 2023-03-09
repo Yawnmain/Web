@@ -1,0 +1,25 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table{
+	border: 2px solid #800000;
+	border-spacing: 0;
+}
+.left, .top{
+	background: #ffcb99;
+	font-weight: bold;
+	font-size: 27px;
+	border-bottom: 2px solid #800000;
+}
+td{
+	text-align: center;
+	width: 60px;
+	border: 1px solid #800000;
+    font-size: 27px;
+}
+.diag{
+	background: #feff99;
+}
+.first{
+	background-color: #800000;
+}
