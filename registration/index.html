@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация на конференцию</title>
+</head>
+  <body>
+    <h1>Регистрация на конференцию</h1>
+    <form method="post" action="main.php">
+      <label for="first-name">Имя:</label>
+      <input type="text" id="first-name" name="first_name" required><br><br>
+      <label for="last-name">Фамилия:</label>
+      <input type="text" id="last-name" name="last_name" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="phone">Телефон:</label>
+      <input type="tel" id="phone" name="phone" required><br><br>
+      <label for="topic">Тематика:</label>
+      <select id="topic" name="topic" required>
+        <option value="">--Выберите тематику--</option>
+        <option value="Бизнес">Бизнес</option>
+        <option value="Технологии">Технологии</option>
+        <option value="Реклама и Маркетинг">Реклама и Маркетинг</option>
+      </select><br><br>
+      <label>Метод оплаты:</label><br>
+      <input type="radio" id="webmoney" name="payment_method" value="WebMoney" required>
+      <label for="webmoney">WebMoney</label><br>
+      <input type="radio" id="yandex-money" name="payment_method" value="Яндекс.Деньги">
+      <label for="yandex-money">Яндекс.Деньги</label><br>
+      <input type="radio" id="paypal" name="payment_method" value="PayPal">
+      <label for="paypal">PayPal</label><br>
+      <input type="radio" id="credit-card" name="payment_method" value="Кредитная карта">
+      <label for="credit-card">Кредитная карта</label><br><br>
+      <label>Хотите получать рассылку о конференции?</label><br>
+      <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+      <label for="newsletter">Да</label><br><br>
+      <input type="submit" value="Отправить">
+    </form>
+    <a href="admin.php" style="position:absolute; top:600px;">Админинка</a>
+  </body>
+</html>
