@@ -1,3 +1,54 @@
+<?php
+session_set_cookie_params(300);
+session_start();
+
+# Проверяем, авторизован ли пользователь
+if (!isset($_SESSION['admin'])) {
+    header('Location: login.php');
+    session_write_close();
+    exit;
+}
+
+# Функция выхода из системы
+if (isset($_POST['logout'])) {
+    session_regenerate_id(true);
+    session_destroy();
+    header('Location: login.php');
+    session_write_close();
+    exit;
+}
+
+# Обновляем время последней активности пользователя
+if (!isset($_SESSION['last_activity'])) {
+    $_SESSION['last_activity'] = time();
+}
+
+# Проверяем, сколько времени прошло с момента последней активности
+$inactiveTime = (time() - ($_SESSION['last_activity']));
+
+# Если прошло более 10 сек бездействия, разлогиниваем пользователя
+if ($inactiveTime > 10) {
+    session_destroy();
+    header('Location: login.php');
+    session_write_close();
+    exit;
+}
+
+# Подсчет уникальных посетителей по IP
+$ip = $_SERVER['REMOTE_ADDR'];
+if (!isset($_SESSION['visitors']) || !in_array($ip, $_SESSION['visitors'])) {
+    $_SESSION['visitors'][] = $ip;
+}
+
+# Подсчет загрузок страницы
+if (isset($_SESSION['page_views'])) {
+    $_SESSION['page_views']++;
+} else {
+    $_SESSION['page_views'] = 1;
+}
+
+header("Cache-Control: no-cache, must-revalidate");
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -10,7 +61,6 @@
 </head>
 
 <body>
-    <h1>Список заявок на конференцию</h1>
     <?php
     $fileContent = file_get_contents('../data/applications.txt');
     $applications = explode(PHP_EOL, $fileContent);
@@ -18,7 +68,15 @@
         $fields = explode('**', $application);
         return count($fields) > 1 && $fields[count($fields) - 1] !== 'deleted';
     });
+    ?>
 
+    <h1>Список заявок на конференцию</h1>
+
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <input type="submit" name="logout" value="Выйти">
+    </form>
+
+    <?php
     if (count($nonDeletedApplications) > 0) {
         echo '<form method="post" action="delete.php">';
         echo '<table>';
@@ -50,7 +108,13 @@
     } else {
         echo '<p>Заявок на конференцию нет</p>';
     }
+
+    echo '<a href="../index.html">Главная</a>';
+
     ?>
+
+    <h3>Уникальных посетителей: <?php echo count($_SESSION['visitors']); ?></h3>
+    <h3>Загрузок страницы: <?php echo $_SESSION['page_views']; ?></h3>
 </body>
 
 </html>
