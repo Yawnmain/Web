@@ -28,7 +28,7 @@ table {
 
 .href_cont {
     display: flex;
-    width: 1000px;
+    width: 1150px;
     height: 20px;
     justify-content: space-between;
     margin-top: 100px;
@@ -81,11 +81,23 @@ a[id="3"]:hover {
     color: white;
     transition: 0.4s;
 }
+a[id="4"] {
+    background-color: rgb(33, 121, 223);
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
 
+a[id="4"]:hover {
+    background-color: rgb(33, 121, 223);
+    padding: 7px 12px 7px 12px;
+    color: white;
+    transition: 0.4s;
+}
 .btns {
     display: flex;
     justify-content: space-between;
-    width: 250px;
+    width: 350px;
 }
 
 .btns a {
@@ -193,4 +205,7 @@ input[type="submit"]:hover{
     height: 35px;
     font-size: 24px;
     background-color: aqua;
+}
+.btns{
+    width: 400px;
 }
