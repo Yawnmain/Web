@@ -5,10 +5,10 @@ class Controller
 {
     protected $model;
 
-    public function getModel() {
+    function getModel() {
         return $this->model;
     }
-    public function __construct($model) {
+    function __construct($model) {
         $this->model = $model;
     }
 

@@ -27,10 +27,49 @@ if (!isset($_SESSION['last_activity'])) {
 $inactiveTime = (time() - ($_SESSION['last_activity']));
 
 # Если прошло более 10 сек бездействия, разлогиниваем пользователя
-if ($inactiveTime > 10) {
+if ($inactiveTime > 300) {
     session_destroy();
     header('Location: login.php');
     session_write_close();
+    exit;
+}
+
+# Получение списка заявок из базы данных
+$host = 'localhost';
+$dbname = 'registration';
+$username = 'yawnmain';
+$password = '567tyu';
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $stmt = $pdo->prepare(
+        "SELECT participants.id, participants.name, participants.lastname, participants.email,
+                participants.tel, subjects.name AS subject_name, payments.name AS payment_name, participants.mailing 
+         FROM participants 
+         JOIN subjects ON participants.subject_id = subjects.id 
+         JOIN payments ON participants.payment_id = payments.id 
+         WHERE participants.deleted_at IS NULL"
+    );
+    $stmt->execute();
+    $applications = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $exception) {
+    echo "Ошибка запроса: " . $exception->getMessage();
+    die();
+}
+
+# Удаление заявок
+if (isset($_POST['delete'])) {
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+        $stmt = $pdo->prepare("UPDATE participants SET deleted_at = NOW() WHERE id = ?");
+        foreach ($_POST['delete'] as $id) {
+            $stmt->execute([$id]);
+        }
+    } catch (PDOException $exception) {
+        echo "Ошибка запроса: " . $exception->getMessage();
+        die();
+    }
+
+    header('Location: admin.php');
     exit;
 }
 
@@ -61,15 +100,6 @@ header("Cache-Control: no-cache, must-revalidate");
 </head>
 
 <body>
-    <?php
-    $fileContent = file_get_contents('../data/applications.txt');
-    $applications = explode(PHP_EOL, $fileContent);
-    $nonDeletedApplications = array_filter($applications, function ($application) {
-        $fields = explode('**', $application);
-        return count($fields) > 1 && $fields[count($fields) - 1] !== 'deleted';
-    });
-    ?>
-
     <h1>Список заявок на конференцию</h1>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
@@ -77,12 +107,10 @@ header("Cache-Control: no-cache, must-revalidate");
     </form>
 
     <?php
-    if (count($nonDeletedApplications) > 0) {
-        echo '<form method="post" action="delete.php">';
+    if (count($applications) > 0) {
+        echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '">';
         echo '<table>';
         echo '<tr>';
-        echo '<th>Дата</th>';
-        echo '<th>IP</th>';
         echo '<th>Имя</th>';
         echo '<th>Фамилия</th>';
         echo '<th>Email</th>';
@@ -92,14 +120,16 @@ header("Cache-Control: no-cache, must-revalidate");
         echo '<th>Подписка</th>';
         echo '<th>Удалить</th>';
         echo '</tr>';
-        foreach ($nonDeletedApplications as $index => $application) {
-            $fields = explode('**', $application);
+        foreach ($applications as $application) {
             echo '<tr>';
-            echo "<input type='hidden' name='index[]' value='$index'>";
-            foreach (array_slice($fields, 0, count($fields) - 1) as $field) {
-                echo "<td>$field</td>";
-            }
-            echo "<td><input type='checkbox' name='delete[]' value='$index'></td>";
+            echo '<td>' . $application['name'] . '</td>';
+            echo '<td>' . $application['lastname'] . '</td>';
+            echo '<td>' . $application['email'] . '</td>';
+            echo '<td>' . $application['tel'] . '</td>';
+            echo '<td>' . $application['subject_name'] . '</td>';
+            echo '<td>' . $application['payment_name'] . '</td>';
+            echo '<td>' . ($application['mailing'] == 1 ? 'Да' : 'Нет') . '</td>';
+            echo "<td><input type='checkbox' name='delete[]' value='{$application['id']}'></td>";
             echo '</tr>';
         }
         echo '</table>';
@@ -109,12 +139,12 @@ header("Cache-Control: no-cache, must-revalidate");
         echo '<p>Заявок на конференцию нет</p>';
     }
 
-    echo '<a href="../index.html">Главная</a>';
 
     ?>
 
-    <h3>Уникальных посетителей: <?php echo count($_SESSION['visitors']); ?></h3>
-    <h3>Загрузок страницы: <?php echo $_SESSION['page_views']; ?></h3>
+    <h3 class="main_btn">Уникальных посетителей: <?php echo count($_SESSION['visitors']); ?></h3>
+    <h3 class="main_btn">Загрузок страницы: <?php echo $_SESSION['page_views']; ?></h3>
+    <a class="main_btn" href="../index.html">Главная</a>
 </body>
 
 </html>
