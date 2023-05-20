@@ -1,0 +1,231 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    margin: 0 200px 0 200px;
+}
+.center{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+}
+th,
+td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    height: 55px;
+    max-height: 55px;
+    overflow:hidden;
+}
+
+th {
+    background-color: rgb(33, 121, 223);
+}
+
+table {
+    margin-top: 10px;
+    table-layout: fixed;
+    max-width: 700px;
+}
+
+.href_cont {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+a[id="1"] {
+    background-color: rgb(33, 121, 223);
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+a[id="1"]:hover {
+    background-color: rgb(33, 121, 223);
+    padding: 7px 12px 7px 12px;
+    color: white;
+    transition: 0.4s;
+}
+
+a[id="2"] {
+    background-color: rgb(33, 121, 223);
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+a[id="2"]:hover {
+    background-color: rgb(33, 121, 223);
+    padding: 7px 12px 7px 12px;
+    color: white;
+    transition: 0.4s;
+}
+
+a[id="3"] {
+    background-color: rgb(33, 121, 223);
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+a[id="3"]:hover {
+    background-color: rgb(33, 121, 223);
+    padding: 7px 12px 7px 12px;
+    color: white;
+    transition: 0.4s;
+}
+a[id="4"] {
+    background-color: rgb(33, 121, 223);
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+a[id="4"]:hover {
+    background-color: rgb(33, 121, 223);
+    padding: 7px 12px 7px 12px;
+    color: white;
+    transition: 0.4s;
+}
+.btns {
+
+}
+
+.btns a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+a[id="b1"] {
+    transition: 0.4s;
+}
+
+a[id="b1"]:hover {
+    transition: 0.4s;
+    color: rgb(29, 170, 24);
+}
+
+a[id="b2"] {
+    transition: 0.4s;
+}
+
+a[id="b2"]:hover {
+    transition: 0.4s;
+    color: rgb(223, 33, 33);
+}
+
+td:nth-child(odd) {
+    background-color: #C9E4F6;
+}
+
+td:nth-child(even) {
+    background-color: #B4DAF2;
+}
+
+tr:hover td {
+    background: #B4FFF2;
+}
+
+form{
+    background-color: rgb(33, 121, 223);
+    width: 20%;
+    padding: 15px;
+    border-radius: 20px;
+}
+form[id="date"]{
+    background: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+label{
+    font-weight: 600;
+}
+input[type="text"]{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    border-radius: 20px;
+    height: 20px;
+    font-size: 14px;
+    padding: 2px;
+}
+select{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 20px;
+    font-size: 14px;
+}
+select[id="list"]{
+    width: 200px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+input[type="datetime-local"]{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 20px;
+    font-size: 14px;
+}
+input[type="number"]{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 20px;
+    font-size: 14px;
+}
+textarea{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 20px;
+    font-size: 14px;
+    resize: vertical;
+    max-height: 100px;
+}
+input[type="submit"]{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 35px;
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: 600;
+}
+input[type="submit"]:hover{
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    height: 35px;
+    font-size: 24px;
+    background-color: aqua;
+}
+.btns{
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    height: 55px;
+    max-height: 55px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
