@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+    
     <title>Мой календарь</title>
 </head>
 
 <body>
-    <div class="center">
         <h1>Текущие задачи</h1>
         <div class="href_cont">
             <select onchange="window.location=this.value;" id="list">
@@ -64,16 +64,13 @@
                         </td>
                         <td class="btns">
                             <a href="../index.php?action=complete_task&id=<?php echo $task['id']; ?>"
-                                onclick="return confirm('Вы уверены?')" id="b3">Выполнено</a>
-                            <div>|</div>
-                            <a href="../index.php?action=edit_task&id=<?php echo $task['id']; ?>" id="b1">Редактировать</a>
-                            <div>|</div>
+                                onclick="return confirm('Вы уверены?')" id="b3">Выполнено</a>  | 
+                            <a href="../index.php?action=edit_task&id=<?php echo $task['id']; ?>" id="b1">Редактировать</a>  | 
                             <a href="../index.php?action=delete_task&id=<?php echo $task['id']; ?>"
                                 onclick="return confirm('Вы уверены?')" id="b2">Удалить</a>
                         </td>
                     </tr>
                 </tbody>
-        </div>
     <?php endforeach; ?>
     </table>
 

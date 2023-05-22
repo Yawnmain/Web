@@ -4,7 +4,7 @@ class Model {
     private $db;
 
     function __construct() {
-        $this->db = new mysqli('localhost', 'yawnmainr', '567tyu', 'my_calendar');
+        $this->db = new mysqli('localhost', 'yawnmain', '567tyu', 'my_calendar');
         if ($this->db->connect_error) {
             die("Ошибка подключения: " . $this->db->connect_error);
         }
