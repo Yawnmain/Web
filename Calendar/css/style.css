@@ -44,6 +44,10 @@ tbody{
     display: flex;
     align-items: center;
 }
+.href_cont a{
+    margin-right: 10px;
+    margin-left: 10px;
+}
 a {
     text-decoration: none;
     color: black;

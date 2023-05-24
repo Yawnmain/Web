@@ -30,6 +30,11 @@
                 <input type="date" name="date" id="date" value="<?php echo date('Y-m-d'); ?>">
                 <button type="submit">Искать</button>
             </form>
+            <a href="index.php?action=show_tasks_today">Задачи на сегодня</a> |
+            <a href="index.php?action=show_tasks_tomorrow">Задачи на завтра</a> |
+            <a href="index.php?action=show_tasks_this_week">Задачи на эту неделю</a> |
+            <a href="index.php?action=show_tasks_next_week">Задачи на следующую неделю</a>
+
         </div>
         <table cellspacing="0">
             <tbody>
