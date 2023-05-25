@@ -52,12 +52,37 @@ switch ($action) {
         $controller->overdue_tasks();
         break;
 
-        case 'show_tasks_by_date':
-            $date = $_GET['date'];
-            $tasks = $controller->getModel()->get_tasks_by_date($date);
+    case 'show_tasks_by_date':
+        $date = $_GET['date'];
+        $tasks = $controller->getModel()->get_tasks_by_date($date);
 
-            require_once('./views/show_tasks_view.php');
-            break;
+        require_once('./views/show_tasks_view.php');
+        break;
+    case 'show_tasks_today':
+        $date = date('Y-m-d');
+        $tasks = $controller->getModel()->get_tasks_by_date($date);
+        require_once('./views/show_tasks_view.php');
+        break;
+    case 'show_tasks_tomorrow':
+        $date = date('Y-m-d', strtotime("+1 day"));
+        $tasks = $controller->getModel()->get_tasks_by_date($date);
+        require_once('./views/show_tasks_view.php');
+        break;
+
+    case 'show_tasks_this_week':
+        $current_day_of_week = date('w');
+        $sunday = date('Y-m-d', strtotime("-{$current_day_of_week} day"));
+        $saturday = date('Y-m-d', strtotime("+" . (6 - $current_day_of_week) . " day"));
+        $tasks = $controller->getModel()->get_tasks_by_date_range($sunday, $saturday);
+        require_once('./views/show_tasks_view.php');
+        break;
+
+    case 'show_tasks_next_week':
+        $next_sunday = date('Y-m-d', strtotime('next Sunday'));
+        $next_saturday = date('Y-m-d', strtotime('+6 days', strtotime($next_sunday)));
+        $tasks = $controller->getModel()->get_tasks_by_date_range($next_sunday, $next_saturday);
+        require_once('./views/show_tasks_view.php');
+        break;
     default:
         $controller->show_tasks();
         break;
